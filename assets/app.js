@@ -1,4 +1,7 @@
 import './bootstrap.js';
+
+import zoomPlugin from 'chartjs-plugin-zoom';
+
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -7,4 +10,8 @@ import './bootstrap.js';
  */
 import './styles/app.css';
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+// register globally for all charts
+document.addEventListener('chartjs:init', function (event) {
+    const Chart = event.detail.Chart;
+    Chart.register(zoomPlugin);
+});

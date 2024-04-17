@@ -36,6 +36,15 @@ class ChartJsController extends AbstractController
                                        'suggestedMax' => 100,
                                    ],
                                ],
+                               'plugins' => [
+                                   'zoom' => [
+                                       'zoom' => [
+                                           'wheel' => ['enabled' => true],
+                                           'pinch' => ['enabled' => true],
+                                           'mode' => 'xy',
+                                       ],
+                                   ],
+                               ],
                            ]);
 
         return $this->render('chart_js/index.html.twig', [
